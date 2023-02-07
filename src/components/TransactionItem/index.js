@@ -22,6 +22,7 @@ const TransactionItem = props => {
           src="https://assets.ccbp.in/frontend/react-js/money-manager/delete.png"
           alt="delete"
           className="img-delete"
+          data-testid="delete"
         />
       </button>
     </li>

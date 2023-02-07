@@ -80,6 +80,23 @@ class MoneyManager extends Component {
     const filteredList = transactionsHistory.filter(
       eachItem => eachItem.id !== id,
     )
+
+    transactionsHistory.filter(eachItem => {
+      if (id === eachItem.id) {
+        if (eachItem.type === 'INCOME') {
+          return this.setState(prevState => ({
+            balance: prevState.balance - parseInt(eachItem.amount),
+            income: prevState.income - parseInt(eachItem.amount),
+          }))
+        }
+        return this.setState(prevState => ({
+          balance: prevState.balance + parseInt(eachItem.amount),
+          expenses: prevState.expenses - parseInt(eachItem.amount),
+        }))
+      }
+      return eachItem.amount
+    })
+
     this.setState({
       transactionsHistory: filteredList,
     })
