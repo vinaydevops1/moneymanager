@@ -98,9 +98,9 @@ class MoneyManager extends Component {
     return (
       <div className="main-page">
         <div className="name-container">
-          <h1 className="name-heading">hi,Richard</h1>
+          <h1 className="name-heading">Hi,Richard</h1>
           <p className="name-para">
-            welcome back to your{' '}
+            Welcome back to your{' '}
             <span className="span-style">Money Manager</span>
           </p>
         </div>
@@ -116,15 +116,17 @@ class MoneyManager extends Component {
               TITLE
             </label>
             <input
+              id="title"
               value={title}
               className="input-style"
               onChange={this.onChangeTitle}
               placeholder="TITLE"
             />
-            <label className="label-style" htmlFor="title">
+            <label className="label-style" htmlFor="amount">
               AMOUNT
             </label>
             <input
+              id="amount"
               value={amount}
               className="input-style"
               onChange={this.onChangeAmount}
